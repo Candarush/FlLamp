@@ -4,21 +4,24 @@ CC=g++
 # Имя линковщика
 LINKER=g++
 
+# Стандарт
+STD=c++11
+
 detector: Vector3.o Soltrack.o Sun.o Lamp.o Cloud.o MosqMQTTWrapper.o MQTTFlowerLamp.o main.o 
-	$(CC) -std=c++11 -I"/usr/local/include" -L"/usr/local/lib" -o detector detector main.o sun.o flowerlamp.o sun.o soltrack.o vector3.o mymqttwrapper.o -lmosquitto -lmosquittopp 
+	$(CC) -I"/usr/local/include" -L"/usr/local/lib" vector3.o soltrack.o sun.o lamp.o cloud.o sun.o mosqmqttwrapper.o mqttflowerlamp.o main.o -o detector -lmosquitto -lmosquittopp 
 Vector3.o: Vector3.hpp
-	$(LINKER) -c Vector3.cpp
+	$(LINKER) -std=$(STD) -c Vector3.cpp -o vector3.o
 main.o:
-	$(LINKER) -c main.cpp
+	$(LINKER) -std=$(STD) -c main.cpp -o main.o
 MQTTFlowerLamp.o: MQTTFlowerLamp.hpp
-	$(LINKER) -c MQTTFlowerLamp.cpp
+	$(LINKER) -std=$(STD) -c MQTTFlowerLamp.cpp -o mqttflowerlamp.o 
 MosqMQTTWrapper.o: MosqMQTTWrapper.hpp
-	$(LINKER) -c MosqMQTTWrapper.cpp
+	$(LINKER) -std=$(STD) -c MosqMQTTWrapper.cpp -o mosqmqttwrapper.o
 Lamp.o: Lamp.hpp
-	$(LINKER) -c Lamp.cpp
+	$(LINKER) -std=$(STD) -c Lamp.cpp -o lamp.o
 Cloud.o: Cloud.hpp
-	$(LINKER) -c Cloud.cpp
+	$(LINKER) -std=$(STD) -c Cloud.cpp -o cloud.o
 Sun.o: Sun.hpp
-	$(LINKER) -c Sun.cpp
+	$(LINKER) -std=$(STD) -c Sun.cpp -o sun.o
 Soltrack.o: SolTrack.h
-	$(LINKER) -o soltrack.o -c SolTrack.c
+	$(LINKER) -std=$(STD) -c SolTrack.c -o soltrack.o

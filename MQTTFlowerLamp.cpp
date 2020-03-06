@@ -4,15 +4,16 @@
 
 namespace MQTTFlower
 {
-    void MQTTloop(MosqMqttWrapper* MQTT)
+
+    void MQTTFlowerLoop(MosqMqttWrapper* MQTT)
     {
         MQTT->loop_forever();
     }
 
-    void InitMQTT(MosqMqttWrapper* iMQTT)
+    void InitMQTT(MosqMqttWrapper* MQTT)
     {
         mosqpp::lib_init();
-        std::thread t(MQTTloop,iMQTT);
+        std::thread t = std::thread(MQTTFlowerLoop, MQTT);
         t.detach();
     }
 

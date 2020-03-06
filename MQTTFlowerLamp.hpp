@@ -12,9 +12,9 @@ using namespace MQTTW;
 
 namespace MQTTFlower
 {
-    void MQTTloop(MQTTW::MosqMqttWrapper* MQTT);
+    void MQTTFlowerLoop(MosqMqttWrapper* MQTT);
 
-    void InitMQTT(MQTTW::MosqMqttWrapper* MQTT);
+    void InitMQTT(MosqMqttWrapper* MQTT);
 
     void SendData(Lamp* lamp, Sun* sun, MQTTW::MosqMqttWrapper* MQTT);
 }
