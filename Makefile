@@ -1,12 +1,8 @@
-# Компилятор
+# Имя компилятора
 CC=g++
 
 # Стандарт
 STD=c++11
-
-.PHONY: all
-
-all: detector clean
 
 detector: Vector3.o Soltrack.o Sun.o Lamp.o Cloud.o MosqMQTTWrapper.o MQTTFlowerLamp.o main.o 
 	$(CC) -I"/usr/local/include" -L"/usr/local/lib" vector3.o soltrack.o sun.o lamp.o cloud.o sun.o mosqmqttwrapper.o mqttflowerlamp.o main.o -o detector -lmosquitto -lmosquittopp 
@@ -26,5 +22,3 @@ Sun.o: Sun.hpp
 	$(CC) -std=$(STD) -c Sun.cpp -o sun.o
 Soltrack.o: SolTrack.h
 	$(CC) -std=$(STD) -c SolTrack.c -o soltrack.o
-clean:
-	rm -rf *.o

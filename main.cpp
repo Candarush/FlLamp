@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "MQTTFlowerLamp.hpp"
-#include "FlOpenCV.hpp"
 
 using namespace std;
 using namespace MQTTFlower;
@@ -30,10 +29,6 @@ int main()
 
     SendData(lamp, sun, MyMQTT);
 
-    string s;
-    while (cin >> s && s != "exit")
-    { }
-    
     delete lamp;
     clouds.clear();
 }
