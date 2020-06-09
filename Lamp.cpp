@@ -20,6 +20,7 @@ namespace FlowerLamp
 
         if (abs(longitude - (object.longitude + shadowOffset.x)) <= object.lon_width / 2 && abs(latitude - (object.latitude + shadowOffset.y)) <= object.lat_width / 2)
         {
+            std::cout << "Луч солнца пересек облако!" << std::endl;
             return true;
         }
 

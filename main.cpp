@@ -28,6 +28,8 @@ int main()
     InitMQTT(MyMQTT);
 
     SendData(lamp, sun, MyMQTT);
+    PrintData(lamp, sun, MyMQTT);
+    
 
     delete lamp;
     clouds.clear();

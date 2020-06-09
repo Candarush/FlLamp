@@ -9,7 +9,7 @@ STD=c++11
 all: detector clear
 
 detector: Vector3.o Soltrack.o Sun.o Lamp.o Cloud.o MosqMQTTWrapper.o MQTTFlowerLamp.o main.o 
-	$(CC) -I"/usr/local/include" -L"/usr/local/lib" vector3.o soltrack.o sun.o lamp.o cloud.o sun.o mosqmqttwrapper.o mqttflowerlamp.o main.o -o detector -lmosquitto -lmosquittopp 
+	$(CC) -I"/usr/local/include" -L"/usr/local/lib" vector3.o soltrack.o lamp.o cloud.o sun.o mosqmqttwrapper.o mqttflowerlamp.o main.o -o detector -lmosquitto -lmosquittopp 
 Vector3.o: Vector3.hpp
 	$(CC) -std=$(STD) -c Vector3.cpp -o vector3.o
 main.o:

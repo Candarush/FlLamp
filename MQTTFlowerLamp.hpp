@@ -17,4 +17,6 @@ namespace MQTTFlower
     void InitMQTT(MosqMqttWrapper* MQTT);
 
     void SendData(Lamp* lamp, Sun* sun, MQTTW::MosqMqttWrapper* MQTT);
+
+    void PrintData(Lamp* lamp, Sun* sun, MQTTW::MosqMqttWrapper* MQTT);
 }

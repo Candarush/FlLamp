@@ -26,4 +26,14 @@ namespace MQTTFlower
         MQTT->send_message(sunAzi.c_str());
         MQTT->send_message(lampState.c_str());
     }
+    
+    void PrintData(Lamp* lamp, Sun* sun, MosqMqttWrapper* MQTT)
+    {
+        std::string sunAlt = "Высота: " + std::to_string(sun->altitude);
+        std::string sunAzi = "Азимут: " + std::to_string(sun->azimuth);
+        std::string lampState = "Лампа включена: " + std::to_string(lamp->GetState());
+        std::cout << sunAlt << std::endl;
+        std::cout << sunAzi << std::endl;
+        std::cout << lampState << std::endl;
+    }
 }
