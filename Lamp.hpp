@@ -18,6 +18,7 @@ namespace FlowerLamp
         
         double latitude;
         double longitude;
+        bool isOn;
         
         class ShadowCaster
         {
@@ -50,7 +51,6 @@ namespace FlowerLamp
         void WriteGraphicsData(std::string filename, std::ios_base::openmode mode);
         
     private:
-        bool isOn;
         
         bool IsUnderShadow(ShadowCaster object, Vector3 sunDiretion, float sunAlt);
     };

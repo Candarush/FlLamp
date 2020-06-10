@@ -4,7 +4,6 @@
 #include <cstring>
 #include <iostream>
 
-extern std::vector<std::string> mymessages;
 namespace MQTTW
 {
     class MosqMqttWrapper : public mosqpp::mosquittopp
