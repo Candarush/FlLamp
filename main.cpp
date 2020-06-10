@@ -32,5 +32,7 @@ int main()
     
 
     delete lamp;
+    delete sun;
+    delete MyMQTT;
     clouds.clear();
 }
